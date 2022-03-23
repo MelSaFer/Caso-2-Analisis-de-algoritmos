@@ -5,53 +5,6 @@
 #include <ctime> 
 
 using namespace std;
-/*
-1-QUICKSORT LOGARITMICO
-
-
-2- QUICKSORT CUADRATICO
-    El quicksort cuadrático lo obtenemos cuando se trabaja con el peor de los
-casos, esto se da porque cuando se escoge el pivote se escoge al numero mayor
-o menor del array, entonces al dividir, nos queda un  arbol desvalanceado
-hacia un lado.
-    Para demostrar esto, use un algoritmo que colocara el pivote en el ultimos
-elemento y se le enviaron arrays ordenados de manera ascendente, haciendo
-que cada vez que dividiera se escogiera como pivote al numero mayor del array
-El comportamiento cuadratico se ve relejado en el creciemiento de la cantidad 
-de cambios realizados en el algoritmo, tal y como vemos a continuacion:
-            ->Elementos         ->Cambios
-                2000              2000999
-                4000              8001999
-                6000             18002999
-                8000             32003999
-               10 000            50004999
-               12 000            72005999
-               14 000            98006999
-               16 000           128007999
-               18 000           162008999
-               20 000           200009999
-    Aqui se observa como entre los cambios del array de 2000 y el de 4000 hay una 
-diferencia de 6001000 aprox, luego entre los de 4000 y 6000 hay una de 10001000 
-aprox, entre el de 6000 y el de 8000 hay una de 14001000 aproximandamente y asi 
-sigue aumentando entre cada array de manera considerable y, mas importante, no 
-crece uniformemente. Este comportamiento tambien se observa si hacemos una
-grafica con los valores de cambio en cada array, 
-
-3-INFLUENCIA DEL PIVOTE FIJO Y ALEATORIO.
-    Comparando la cantidad de cambios que hizo el algoritmo en el peor de los
-casos con los que hizo el algoritmo escogiendo un pivote random es mejor usar 
-este, ya que si en una iterancion escogi de pivote uno de los elementos de los 
-extremos puede que en la siguente iteracion no, esto porque no tengo un indicio
-de como se va a comportar el algoritmo.
-    Cuando estoy en caso promedio no importa tanto porque es cuestion de suerte
-la influencia tendra el pivote sobre mi algpritmo, puede que tenga suerte con
-el random o puede que no, pero en este caso hay que tener en cuenta que el random
-aunemtara un poco la carga del algoritmo.
-
-
-
-*/
-
 
 //CONTADORES
 int cambiosP=0;
@@ -352,4 +305,53 @@ int main()
 
     return 0;
 }
- 
+/*
+----------------------------------RESPUESTAS-----------------------------------
+1-QUICKSORT LOGARITMICO
+
+-------------------------------------------------------------------------------
+2- QUICKSORT CUADRATICO
+    El quicksort cuadrático lo obtenemos cuando se trabaja con el peor de los
+casos, esto se da porque cuando se escoge el pivote se escoge al numero mayor
+o menor del array, entonces al dividir, nos queda un  arbol desvalanceado
+hacia un lado.
+    Para demostrar esto, use un algoritmo que colocara el pivote en el ultimos
+elemento y se le enviaron arrays ordenados de manera ascendente, haciendo
+que cada vez que dividiera se escogiera como pivote al numero mayor del array
+El comportamiento cuadratico se ve relejado en el creciemiento de la cantidad 
+de cambios realizados en el algoritmo, tal y como vemos a continuacion:
+                ->Elementos         ->Cambios
+                    2000              2000999
+                    4000              8001999
+                    6000             18002999
+                    8000             32003999
+                   10 000            50004999
+                   12 000            72005999
+                   14 000            98006999
+                   16 000           128007999
+                   18 000           162008999
+                   20 000           200009999
+    Aqui se observa como entre los cambios del array de 2000 y el de 4000 hay una 
+diferencia de 6001000 aprox, luego entre los de 4000 y 6000 hay una de 10001000 
+aprox, entre el de 6000 y el de 8000 hay una de 14001000 aproximandamente y asi 
+sigue aumentando entre cada array de manera considerable y, mas importante, no 
+crece uniformemente. Este comportamiento tambien se observa si hacemos una
+grafica con los valores de cambio en cada array, pues tiene la forma de las
+funciones cuadraticas, aumenta creando una forma similar a la de una U, o en
+este caso, media U.
+
+----------------------------------------------------------------------------------
+
+3-INFLUENCIA DEL PIVOTE FIJO Y ALEATORIO.
+    Comparando la cantidad de cambios que hizo el algoritmo en el peor de los
+casos con los que hizo el algoritmo escogiendo un pivote random es mejor usar 
+este, ya que si en una iterancion escogi de pivote uno de los elementos de los 
+extremos puede que en la siguente iteracion no, esto porque no tengo un indicio
+de como se va a comportar el algoritmo.
+    Cuando estoy en caso promedio no importa tanto porque es cuestion de suerte
+la influencia tendra el pivote sobre mi algpritmo, puede que tenga suerte con
+el random o puede que no, pero en este caso hay que tener en cuenta que el random
+aunemtara un poco la carga del algoritmo.
+
+*/
+

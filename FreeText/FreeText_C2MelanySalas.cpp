@@ -11,6 +11,7 @@ const int t = 256;
 const int w = 1283;
 int contApariciones = 0;
 
+
 void Rabin_Karp_Algorithm(string text,string pattern){
     
     //Length of text string.
@@ -84,3 +85,12 @@ int main()
     cout << "Apariciones de " << pattern << ": "<< contApariciones;
     return 0; 
 }
+/*
+----------------------------------RESPUESTAS-----------------------------------
+7- Lograr un freetext search en tiempo logarítmico o lineal. Se recomienda usar un texto de mínimo 10MB.
+En este caso use el algoritmo de rabin karp, cuyo tiempo de 
+en O(patternLength+ textLength), resultando como un algorit-
+mo lineal, ya que nuestro O(n) aumentara en 1 por cada elemen-
+to o caracter que le agreguemos al patron que estamos buscando.
+
+*/
