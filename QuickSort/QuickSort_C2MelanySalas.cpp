@@ -1,20 +1,33 @@
+//Instituto Tecnologico de Costa Rica
+//Caso 2- Análisis de algoritmos
+//Melany Salas Fernandez_2021121147
+
+//LIBRERIAS____________________________________________________________________________________________
 #include <iostream>
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h> 
 #include <ctime> 
+#include <chrono>
+
 
 using namespace std;
 
+//VARIABLES GLOBALES______________________________________________________________________________________
 //CONTADORES
 int cambiosP=0;
 int comparacionesFor = 0;
 int llamadasQuick = 0;
 int cicloWhile = 0;
-unsigned tInicial, tFinal;
 
-//-----------------------------------------------------------------QUICKSORT----------------------------------------------------------------------
-//FUNCION QUE REALIZA LOS CAMBIOS DE POCISIONES EN EL ARRAY
+
+//-----------------------------------------------QUICKSORT-------------------------------------------------
+
+//----------------------------------------------------------------------------------------------------------
+//Funcion para hacer cambios de posiciones, intercamcia el valor de a por el de b y viceversa
+//Entradas: un entero a y un entero b
+//Salidas: None
+//----------------------------------------------------------------------------------------------------------
 void cambio(int* a, int* b){
     cambiosP++;
     int t = *a;
@@ -22,9 +35,14 @@ void cambio(int* a, int* b){
     *b = t;
 }
  
-//QUICKSORT CON PIVOTE FIJO (PRIMER ELEMENT0)------------------------------------------------------------------------------------------------------
-//Recibe el array que se esta ordenando, incion que es el indice inicial y que es el indice final + 1
-//Ordena los numeros mayores que el pivote a la izquierda y los otros a la derecha
+//QUICKSORT CON PIVOTE FIJO (PRIMER ELEMENT0)----------------------------------------------------------------
+
+//----------------------------------------------------------------------------------------------------------
+//Funcion para hacer la divicion del array, escoge pivote y ordena los numeros mayores que el pivote a la 
+//   izquierda y los otros a la derecha.
+//Entradas:Recibe el array que se esta ordenando, inicio que es el indice inicial y que es el indice final + 1
+//Salidas: None
+//----------------------------------------------------------------------------------------------------------
 int partition (int arr[], int inicio, int final){
     int r = rand() % final;
     int pivot = arr[final]; // Toma el elemento final como pivote
@@ -43,7 +61,11 @@ int partition (int arr[], int inicio, int final){
     return (i + 1);
 }
  
-//Funcion recusiva quickSort
+//----------------------------------------------------------------------------------------------------------
+//Funcion principal del QuickSort
+//Entradas:Un array de tamaño n, un entero con el indice inicial y otro con el final
+//Salidas: 
+//----------------------------------------------------------------------------------------------------------
 void quickSort(int arr[], int inicio, int final){
     llamadasQuick++;
     if (inicio < final){
@@ -55,9 +77,13 @@ void quickSort(int arr[], int inicio, int final){
     }
 }
 
-//QUICK SORT COON PIVOTE ALEATORIO-----------------------------------------------------------------------------------------------------------------
-//Recibe el array que se esta ordenando, incion que es el indice inicial y que es el indice final + 1
-//Ordena los numeros mayores que el pivote a la izquierda y los otros a la derecha
+//QUICK SORT COON PIVOTE ALEATORIO--------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------------
+//Funcion partition random hace la divicion del array, escoge pivote y ordena los numeros mayores que el 
+//                          pivote a la izquierda y los otros a la derecha.
+//Entradas:Recibe el array que se esta ordenando, inicio que es el indice inicial y que es el indice final + 1
+//Salidas: None
+//----------------------------------------------------------------------------------------------------------
 int partitionRan (int arr[], int inicio, int final)
 {
     comparacionesFor++;
@@ -69,7 +95,11 @@ int partitionRan (int arr[], int inicio, int final)
     return partition(arr, inicio, final);
 }
  
-/* The main function that implements QuickSort*/
+//----------------------------------------------------------------------------------------------------------
+//Funcion principal del QuickSort -> llama a partition en su version random
+//Entradas:Un array de tamaño n, un entero con el indice inicial y otro con el final
+//Salidas: 
+//----------------------------------------------------------------------------------------------------------
 void quickSortRan (int arr[], int inicio, int final){
     llamadasQuick++; //Contador de llamadas al quicksort
     if (inicio < final){
@@ -83,8 +113,11 @@ void quickSortRan (int arr[], int inicio, int final){
 }
 
 
-//------------------------------------------------------------------------------------------------------------
-//Funcion para imprimir un array
+//----------------------------------------------------------------------------------------------------------
+//Funcion para imprimir arrays
+//Entradas: Un array de tamaño n y el tamaño de array (n)
+//Salidas: None, hace prints de los elementos
+//----------------------------------------------------------------------------------------------------------
 void printArray(int arr[], int size){
     int i;
     for (i = 0; i < size; i++)
@@ -92,81 +125,105 @@ void printArray(int arr[], int size){
     cout << endl;
 }
 
+//----------------------------------------------------------------------------------------------------------
 //Funcion para inicializar contadores 
+//Entradas: None
+//Salidas: None
+//---------------------------------------------------------------------------------------------------------- 
 void inicializaCont(){
     cambiosP=0;
     comparacionesFor=0;
     llamadasQuick=0;
 }
 
-//Funcion para imprimir las estadisticas del algoritmo
+//----------------------------------------------------------------------------------------------------------
+//Funcion para imprimir estadisticas del algoritmo
+//Entradas: enteros, uno para el tiempo de ejecucion en seguntos, un contador de ciclos for, un contador de 
+//          cambios y un contador de iteraciones en ciclo while
+//Salidas: None, hace prints de las estadisticas.
+//----------------------------------------------------------------------------------------------------------
 void printEstadisticasQS(int contadorLlamadas, int contadorFOR, long double time, int cambios){
     cout << "\t\tLLAMADAS A LA FUNCION QUICK: " << contadorLlamadas << endl;
     cout << "\t\tENTRADAS AL CICLO FOR: " << contadorFOR << endl;
     cout << "\t\tCAMBIOS: " << cambios << endl;
-    cout << "\t\tTiempo de ejecucion: " << time << endl;
+    cout << "\t\tTiempo de ejecucion en microsegundos: " << time << endl;
     inicializaCont();
 }
 
+//----------------------------------------------------------------------------------------------------------
 //Funcion para hacer las pruebas del algoritmo cuando es cuadratico
+//Entradas: Un array de tamaño n y un entero con el tamaño del array
+//Salidas: None
+//----------------------------------------------------------------------------------------------------------
 void pruebasQScuadratico( int pruebaQS[], int size){
     double time;
+    auto tInicial = chrono::steady_clock::now();
+    auto tFinal = chrono::steady_clock::now();
 
     for (int i = 0; i < size; i++){
         pruebaQS[i] = i;
     }
     
-    tInicial= clock();
+    tInicial = chrono::steady_clock::now();
     quickSort(pruebaQS, 0, size - 1);
-    tFinal = clock();
+    tFinal = chrono::steady_clock::now();
 
     //PRINTS CONTADORES
     cout<< "\tPIVOTE FIJO:" << endl;
-    time = (double(tFinal-tInicial)/CLOCKS_PER_SEC);
+    time = chrono::duration_cast<chrono::microseconds>(tFinal - tInicial).count();
     printEstadisticasQS(llamadasQuick, comparacionesFor, time , cambiosP);
 
     //PIVOTE RANDOM
-    tInicial= clock();
+    tInicial = chrono::steady_clock::now();
     quickSortRan(pruebaQS, 0, size - 1);
-    tFinal = clock();
+    tFinal = chrono::steady_clock::now();
 
     cout<< "\tPIVOTE RANDOM:" << endl;
-    time = (double(tFinal-tInicial)/CLOCKS_PER_SEC);
+    time = chrono::duration_cast<chrono::microseconds>(tFinal - tInicial).count();
     printEstadisticasQS(llamadasQuick, comparacionesFor, time , cambiosP);
 
 }
 
+//----------------------------------------------------------------------------------------------------------
 //Funcion para hacer las pruebas del algoritmo para cuando es logaritmico
+//Entradas: Un array de tamaño n y un entero con el tamaño del array
+//Salidas: None
+//----------------------------------------------------------------------------------------------------------
 void pruebaQSlog(int pruebaQS[], int size){
     double time;
+    auto tInicial = chrono::steady_clock::now();
+    auto tFinal = chrono::steady_clock::now();
 
     for (int i = 0; i < size; i++){
-        pruebaQS[i] = rand()%10000;
+        pruebaQS[i] = i;
     }
-    tInicial= clock();
-    quickSort(pruebaQS, 0, size - 1);
-    tFinal = clock();
+    //pruebaQS[size-1]= size/2;
+    //tInicial = chrono::steady_clock::now();
+    //quickSort(pruebaQS, 0, size - 1);
+    //tFinal = chrono::steady_clock::now();
 
     //PRINTS CONTADORES
-    cout<< "\tPIVOTE FIJO:" << endl;
-    time = (double(tFinal-tInicial)/CLOCKS_PER_SEC);
-    printEstadisticasQS(llamadasQuick, comparacionesFor, time , cambiosP);
+    //cout<< "\tPIVOTE FIJO:" << endl;
+    //time = chrono::duration_cast<chrono::microseconds>(tFinal - tInicial).count();
+    //printEstadisticasQS(llamadasQuick, comparacionesFor, time , cambiosP);
 
     //PIVOTE RANDOM
-    tInicial= clock();
+    tInicial = chrono::steady_clock::now();
     quickSortRan(pruebaQS, 0, size - 1);
-    tFinal = clock();
+    tFinal = chrono::steady_clock::now();
 
-    cout<< "\tPIVOTE RANDOM:" << endl;
-    time = (double(tFinal-tInicial)/CLOCKS_PER_SEC);
+    //cout<< "\tPIVOTE RANDOM:" << endl;
+    time = chrono::duration_cast<chrono::microseconds>(tFinal - tInicial).count();
     printEstadisticasQS(llamadasQuick, comparacionesFor, time , cambiosP);
 }
 
  //------------------------------------------------MAIN------------------------------------------
 int main()
 {
+    auto tInicial = chrono::steady_clock::now();
+    auto tFinal = chrono::steady_clock::now();
     inicializaCont();
-    double time;
+    long double time;
 
     //Prueba para demostrar que el algoritmo funciona
     cout << "QUICKSORT_____________________________________________________________________" << endl;
@@ -176,12 +233,12 @@ int main()
     cout << "->Prueba con: ";
     printArray(arr, n);
 
-    tInicial= clock();
+    tInicial = chrono::steady_clock::now();
     quickSort(arr, 0, n - 1);
-    tFinal = clock();
+    tFinal = chrono::steady_clock::now();
 
     //PRINTS CONTADORES
-    time = (double(tFinal-tInicial)/CLOCKS_PER_SEC);
+    time = chrono::duration_cast<chrono::microseconds>(tFinal - tInicial).count();
     printEstadisticasQS(llamadasQuick, comparacionesFor, time , cambiosP);
     cout << "Array ordenado: "; printArray(arr, n);
 
@@ -190,12 +247,12 @@ int main()
     int sizePrueba2 = sizeof(prueba2) / sizeof(prueba2[0]);
     cout << "Array sin ordenar: ";
     printArray(prueba2, sizePrueba2);
-    tInicial= clock();
+    tInicial = chrono::steady_clock::now();
     quickSortRan(prueba2, 0, sizePrueba2 - 1);
-    tFinal = clock();
+    tFinal = chrono::steady_clock::now();
 
     //PRINTS CONTADORES
-    time = (double(tFinal-tInicial)/CLOCKS_PER_SEC);
+    time = chrono::duration_cast<chrono::microseconds>(tFinal - tInicial).count();
     printEstadisticasQS(llamadasQuick, comparacionesFor, time , cambiosP);
     cout << "Array ordenado: ";printArray(prueba2, sizePrueba2);
 
@@ -252,62 +309,125 @@ int main()
     pruebasQScuadratico(pruebaQS1, 20000);
 
     //->ALGORITMO O(logn)
-   /*  //------------------------------------------------------------------------------------------
-    cout << "\n\n ->Prueba con array de 2000 en el caso promedio"<<endl;
-    // PRUEBAQS2
-    
+    cout<<"\n\nCASO PROMEDIO-----------------------------------------------------------------"<<endl;
+     //------------------------------------------------------------------------------------------
+    cout << "\n\n ->Prueba con array de 1000 en el caso promedio"<<endl;
+    int pruebaQS1log[1000];
+    pruebaQSlog(pruebaQS1log, 1000);   
 
     //-----------------------------------------------------------------------------------
-    cout << "\n\n ->Prueba con array de 4000 en el caso promedio"<<endl;
-    // PRUEBAQS3
-    
-
-    //-----------------------------------------------------------------------------------
-    cout << "\n\n ->Prueba con array de 6000 en el caso promedio"<<endl;
-    // PRUEBAQS4
-   
+   cout << "\n\n ->Prueba con array de 2000 en el caso promedio"<<endl;
+    int pruebaQS2log[2000];
+    pruebaQSlog(pruebaQS2log, 2000);  
 
    //-------------------------------------------------------------------------
+    cout << "\n\n ->Prueba con array de 3000 en el caso promedio"<<endl;
+    int pruebaQS3log[3000];
+    pruebaQSlog(pruebaQS3log, 3000);  
+
+   //-------------------------------------------------------------------------
+    cout << "\n\n ->Prueba con array de 4000 en el caso promedio"<<endl;
+    int pruebaQS4log[4000];
+    pruebaQSlog(pruebaQS4log, 4000);  
+
+
+    //-------------------------------------------------------------------------
+    cout << "\n\n ->Prueba con array de 5000 en el caso promedio"<<endl;
+    int pruebaQS5log[5000];
+    pruebaQSlog(pruebaQS5log, 5000);
+
+    //-------------------------------------------------------------------------
+    cout << "\n\n ->Prueba con array de 6000 en el caso promedio"<<endl;
+    int pruebaQS6log[6000];
+    pruebaQSlog(pruebaQS6log, 6000);
+    
+    //-------------------------------------------------------------------------
+    cout << "\n\n ->Prueba con array de 7000 en el caso promedio"<<endl;
+    int pruebaQS7log[7000];
+    pruebaQSlog(pruebaQS7log, 7000);
+   
+    //-------------------------------------------------------------------------
     cout << "\n\n ->Prueba con array de 8000 en el caso promedio"<<endl;
-    // PRUEBAQS5
-    
+    int pruebaQS8log[8000];
+    pruebaQSlog(pruebaQS8log, 8000);
 
-    //-----------------------------------------------------------------------------------
+    //-------------------------------------------------------------------------
+    cout << "\n\n ->Prueba con array de 9000 en el caso promedio"<<endl;
+    int pruebaQS9log[9000];
+    pruebaQSlog(pruebaQS9log, 9000);
+        
+    //-------------------------------------------------------------------------
     cout << "\n\n ->Prueba con array de 10000 en el caso promedio"<<endl;
-    // PRUEBAQS6
-   
+    int pruebaQS10log[10000];
+    pruebaQSlog(pruebaQS10log, 10000);
 
-    //-----------------------------------------------------------------------------------
+    //-------------------------------------------------------------------------
+    cout << "\n\n ->Prueba con array de 11000 en el caso promedio"<<endl;
+    int pruebaQS11log[11000];
+    pruebaQSlog(pruebaQS11log, 11000);
+
+    //-------------------------------------------------------------------------
     cout << "\n\n ->Prueba con array de 12000 en el caso promedio"<<endl;
-    // PRUEBAQS7
-    
+    int pruebaQS12log[12000];
+    pruebaQSlog(pruebaQS12log, 12000);
 
-    //-----------------------------------------------------------------------------------
+    //-------------------------------------------------------------------------
+    cout << "\n\n ->Prueba con array de 13000 en el caso promedio"<<endl;
+    int pruebaQS13log[13000];
+    pruebaQSlog(pruebaQS13log, 13000);
+
+    //-------------------------------------------------------------------------
     cout << "\n\n ->Prueba con array de 14000 en el caso promedio"<<endl;
-    // PRUEBAQS8
-   
+    int pruebaQS14log[14000];
+    pruebaQSlog(pruebaQS14log, 14000);
 
-    //-----------------------------------------------------------------------------------
+    //-------------------------------------------------------------------------
+    cout << "\n\n ->Prueba con array de 15000 en el caso promedio"<<endl;
+    int pruebaQS15log[15000];
+    pruebaQSlog(pruebaQS15log, 15000);
+
+    //-------------------------------------------------------------------------
     cout << "\n\n ->Prueba con array de 16000 en el caso promedio"<<endl;
-    // PRUEBAQS9
-    
+    int pruebaQS16log[16000];
+    pruebaQSlog(pruebaQS16log, 16000);
 
-    //------------------------------------------------------------------------------------------
-    cout << "\n\n ->Prueba con array de 18000 en el caso promedio"<<endl;
-    // PRUEBAQS8
     
-    
-    //------------------------------------------------------------------------------------------
-    cout << "\n\n ->Prueba con array de 20000 en el caso promedio"<<endl;
-    // PRUEBAQS8
-
-     */
 
     return 0;
 }
 /*
 ----------------------------------RESPUESTAS-----------------------------------
 1-QUICKSORT LOGARITMICO
+    En el caso del quicksort n(log(n)) se uso un pivote random en una lista
+ordenada de manera ascendente, en las pruebas con este pivote no podemos
+predecir como será el funcionamiento de este, pero tiende a ser mejor que 
+usar un pivote fijo en con este tipo del listas.
+    En la demostracion de este algoritmo se observa lo siguente:
+                ->Elementos         ->Cambios
+                    1000               5511
+                    2000              12026
+                    3000              18678
+                    4000              25400
+                    5000              31695
+                    6000              38307
+                    7000              44905
+                    8000              51458
+                    9000              58141
+                    10000             63584
+                    11000             69913
+                    12000             76670
+                    13000             83706
+                    14000             89684
+                    15000             96617
+                    16000             103182
+    En este caso se observa como el cambio entre el array de 1000 y de 2000 ele-
+mentos hay un cambio de 6515, entre el de 2000 y el de 3000 uno de 6652, entre
+el de 3000 y el de 6000 es de 6722 y asi sicesivamente, la diferencia varia entre
+los 6000 y los 7000 cambios entre mayor es la entrada por cada 1000 elemento, 
+pero no llega a ser uniforme ya que varia entre los elementos.
+    Al graficar en relacion a los cambios vemos como se cumple el comportamiento
+lineal del orden logaritmico O(n log n), ya que el cambio es similar cuando 
+obtenemos entradas cada vez mas grandes
 
 -------------------------------------------------------------------------------
 2- QUICKSORT CUADRATICO

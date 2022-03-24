@@ -1,21 +1,25 @@
+//Instituto Tecnologico de Costa Rica
+//Caso 2- Análisis de algoritmos
+//Melany Salas Fernandez_2021121147
+
+//LIBRERIAS____________________________________________________________________________________________
 #include <iostream>
 #include <stdlib.h>
 #include <stdio.h>
-#include <string.h>
-#include <vector>
-#include <algorithm>
 #include <time.h> 
 #include <ctime> 
+#include <chrono>
 
 using namespace std;
 
+//VARIABLES GLOBALES______________________________________________________________________________________
 //CONTADORES
 int cambiosP=0;
 int comparacionesFor = 0;
 int cicloWhile = 0;
-unsigned tInicial, tFinal;
 
-//------------------------------------------------------------INSERTIONSORT----------------------------------------------------------------------
+
+//-------------------------------------------------INSERTIONSORT-------------------------------------------
 void insertionSort(int *array, int size) {
    int key, j;  //Se definen variables
    for(int i = 1; i < size; i++) {      //Ciclo for que recorre el array
@@ -32,7 +36,11 @@ void insertionSort(int *array, int size) {
    }
 }
 
+//----------------------------------------------------------------------------------------------------------
 //Funcion para imprimir arrays
+//Entradas: Un array de tamaño n y el tamaño de array (n)
+//Salidas: None, hace prints de los elementos
+//----------------------------------------------------------------------------------------------------------
 void printArray(int arr[], int size){
     int i;
     for (i = 0; i < size; i++)
@@ -40,42 +48,60 @@ void printArray(int arr[], int size){
     cout << endl;
 }
 
+//----------------------------------------------------------------------------------------------------------
 //Funcion para imprimir estadisticas del algoritmo
+//Entradas: enteros, uno para el tiempo de ejecucion en seguntos, un contador de ciclos for, un contador de 
+//          cambios y un contador de iteraciones en ciclo while
+//Salidas: None, hace prints de las estadisticas.
+//----------------------------------------------------------------------------------------------------------
 void printEstadisticasIS(long double time, int contadorFOR,  int cambios, int cicloW){
-    cout << "\t\tTiempo de ejecución: " << time << endl;
+    cout << "\t\tTIEMPO DE EJECUCION: " << time << endl;
     cout << "\t\tENTRADAS AL CICLO FOR: " << comparacionesFor << endl;
     cout << "\t\tCAMBIOS: " << cambios << endl; 
     cout << "\t\tITERACIONES DEL CICLO WHILE:  " << cicloW << endl; 
 }
 
+//----------------------------------------------------------------------------------------------------------
 //Funcion para hacer pruebas del algoritmo cuando este es lineal (Esta ordenado)
+//Entradas: Un array de tamaño n y un entero con el tamaño del array
+//Salidas: None
+//----------------------------------------------------------------------------------------------------------
 void pruebaISlineal(int pruebaIS[], int size){
     double time;
+    auto tInicial = chrono::steady_clock::now();
+    auto tFinal = chrono::steady_clock::now();
     for (int i = 0; i < size; i++){
         pruebaIS[i] = i;
     }
-    tInicial= clock();
+    tInicial = chrono::steady_clock::now();
     insertionSort(pruebaIS, size);
-    tFinal = clock();
+    tFinal = chrono::steady_clock::now();
     
     //PRINTS CONTADORES
-    time = (double(tFinal-tInicial)/CLOCKS_PER_SEC);
+    time = chrono::duration_cast<chrono::microseconds>(tFinal - tInicial).count();
     printEstadisticasIS(time, comparacionesFor, cambiosP, cicloWhile);
 
 }
 
+//----------------------------------------------------------------------------------------------------------
 //Funcion para hacer pruebas del algoritmo cuando este es cuadratico
+//Entradas:Un array de tamaño n y un entero con el tamaño del array
+//Salidas: None
+//----------------------------------------------------------------------------------------------------------
 void pruebaISCuadratico(int pruebaIS[], int size){
     double time;
+    auto tInicial = chrono::steady_clock::now();
+    auto tFinal = chrono::steady_clock::now();
     for (int i = size; i > 0 ; i--){
         pruebaIS[size-i] = i;
     }
-    tInicial= clock();
+    tInicial = chrono::steady_clock::now();
     insertionSort(pruebaIS, size);
-    tFinal = clock();
+    
+    tFinal = chrono::steady_clock::now();
     
     //PRINTS CONTADORES
-    time = (double(tFinal-tInicial)/CLOCKS_PER_SEC);
+    time = chrono::duration_cast<chrono::microseconds>(tFinal - tInicial).count();
     printEstadisticasIS(time, comparacionesFor, cambiosP, cicloWhile);
 
 }
@@ -83,6 +109,8 @@ void pruebaISCuadratico(int pruebaIS[], int size){
 //---------------------------------------------------------------MAIN----------------------------------------------------
 int main(){
     double time;
+    auto tInicial = chrono::steady_clock::now();
+    auto tFinal = chrono::steady_clock::now();
     cout << "\n\nINSERTION SORT_____________________________________________________________________" << endl;
 
     cambiosP=0; comparacionesFor=0; cicloWhile=0;
@@ -91,14 +119,15 @@ int main(){
     
     int sizePrueba = sizeof(prueba) / sizeof(prueba[0]);
     cout << "Array sin ordenar: \n";
-    tInicial= clock();
+    tInicial = chrono::steady_clock::now();
     printArray(prueba, sizePrueba);
 
     insertionSort(prueba, sizePrueba);
 
-    tFinal = clock();
-    time = (double(tFinal-tInicial)/CLOCKS_PER_SEC);
-    cout << "Execution Time: " << time << endl;
+    
+    tFinal = chrono::steady_clock::now();
+    time = chrono::duration_cast<chrono::microseconds>(tFinal - tInicial).count();
+    cout << "TIEMPO DE EJECUCION: " << time << endl;
     cout << "ENTRADAS AL CICLO FOR: " << comparacionesFor << endl;
     cout << "CAMBIOS: " << cambiosP << endl; 
 
@@ -272,7 +301,6 @@ de 1 en iteraciones, como es este caso:
 cambios, es decir, tenemos un array totalmente desordenado entonces, debemos
 hacer los cambios cada vez que hacemos un sub array, si tenemos un array de 
 5 elementos que esta desordenado hariamos algo asi:
-
                         array = 5, 4, 3, 2, 1
     Si analizamos  {5, 4} debemos cambiar 4 y obtenemos {4, 5}
 Luego analizamos {4, 5, 3} y debemos cambiar el 3 dos veces obteniendo
