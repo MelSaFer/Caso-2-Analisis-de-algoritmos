@@ -137,7 +137,7 @@ como es este caso:
                         ENTRADAS AL CICLO FOR: 20000
                         CAMBIOS: 0
                         ITERACIONES DEL CICLO WHILE:  0
-	Cuando tenemos 20000 elemenos, hacemos 19999 entradas en el for, pero
+Cuando tenemos 20000 elemenos, hacemos 19999 entradas en el for, pero
 cuando le agregamos un elemento al array hace 20000 entradas al for.
 
 ------------------------------------------------------------------------------------
