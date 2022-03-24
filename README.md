@@ -35,10 +35,10 @@ usar un pivote fijo en con este tipo del listas.
 hay un cambio de 6515, entre el de 2000 y el de 3000 uno de 6652, entre
 el de 3000 y el de 6000 es de 6722 y asi sicesivamente, la diferencia varia entre
 los 6000 y los 7000 cambios entre mayor es la entrada por cada 1000 elemento, 
-pero no llega a ser uniforme ya que varia entre los elementos.
+pero no llega a ser uniforme ya que varia entre los array.
     Al graficar en relacion a los cambios vemos como se cumple el comportamiento
 lineal del orden logaritmico O(n log n), ya que el cambio es similar cuando 
-obtenemos entradas cada vez mas grandes
+obtenemos entradas cada vez mas grandes. 
 
 -------------------------------------------------------------------------------
 2- QUICKSORT CUADRATICO
