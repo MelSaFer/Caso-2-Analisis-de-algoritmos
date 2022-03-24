@@ -1,6 +1,8 @@
 //Instituto Tecnologico de Costa Rica
 //Caso 2- Análisis de algoritmos
 //Melany Salas Fernandez_2021121147
+//GitHub: https://github.com/MelSaFer/Caso-2-Analisis-de-algoritmos.git
+
 
 //LIBRERIAS____________________________________________________________________________________________
 #include <iostream>
@@ -465,13 +467,22 @@ este caso, media U.
 3-INFLUENCIA DEL PIVOTE FIJO Y ALEATORIO.
     Comparando la cantidad de cambios que hizo el algoritmo en el peor de los
 casos con los que hizo el algoritmo escogiendo un pivote random es mejor usar 
-este, ya que si en una iterancion escogi de pivote uno de los elementos de los 
+este, ya que si en una iterancion escogí de pivote uno de los elementos de los 
 extremos puede que en la siguente iteracion no, esto porque no tengo un indicio
-de como se va a comportar el algoritmo.
+de como se va a comportar el algoritmo en cada iteracion, debido a la variacion 
+en cada una de ellas.
     Cuando estoy en caso promedio no importa tanto porque es cuestion de suerte
-la influencia tendra el pivote sobre mi algpritmo, puede que tenga suerte con
+la influencia que tendra el pivote sobre mi algpritmo, puede que tenga suerte con
 el random o puede que no, pero en este caso hay que tener en cuenta que el random
-aunemtara un poco la carga del algoritmo.
+aumentara un poco la carga del algoritmo. 
+	En resumen, cuando tenemos una lista ordenada, el pivote random es la mejor
+opcion, ya que nos ayuda a evitar el peor de los casos (cuando el pivote es uno
+de los minimos o maximos del array), cuando tenemos una lista totalmente desorde-
+nada no importa cual pivote utilicemos, ya que dependera de la posicion que se
+escoja como pivote y no podemos saber cual sera un elemento intermedio, indepen-
+dientemente de cual de las 2 formas usemos puede que se escoja un buen o un mal 
+pivote.
+
 
 */
 

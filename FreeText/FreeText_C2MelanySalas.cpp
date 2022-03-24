@@ -1,6 +1,7 @@
 //Instituto Tecnologico de Costa Rica
 //Caso 2- Análisis de algoritmos
 //Melany Salas Fernandez_2021121147
+//GitHub: https://github.com/MelSaFer/Caso-2-Analisis-de-algoritmos.git
 
 //LIBRERIAS____________________________________________________________________________________________
 #include <iostream>

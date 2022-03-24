@@ -1,6 +1,8 @@
 //Instituto Tecnologico de Costa Rica
 //Caso 2- Análisis de algoritmos
 //Melany Salas Fernandez_2021121147
+//GitHub: https://github.com/MelSaFer/Caso-2-Analisis-de-algoritmos.git
+
 
 //LIBRERIAS____________________________________________________________________________________________
 #include <iostream>
@@ -252,11 +254,11 @@ int main(){
 /*
 ----------------------------------RESPUESTAS-----------------------------------
 4- INSERTION SORT LINEAL
-    Cuando nos encontramos con el mejor de los casos en el insertion sort
+   Cuando nos encontramos con el mejor de los casos en el insertion sort
 no tenemos que hacer cambios, debido a que el algoritmo ya esta previamente
-ordenado, si vemos las iteraciones estan directamente relacionadas con la
-cantidad de elementos del array, si tengo un array de 200 elementos y estan
-ordenados se haran 199 itenaciones y 0 cambios, si tenemos uno de 300 se 
+ordenado, si vemos, las iteraciones estan directamente relacionadas con la
+cantidad de elementos del array, si tengo un array de 200 elementos y están
+ordenados se harán 199 itenaciones y 0 cambios, si tenemos uno de 300 se 
 realizarian 299 iteraciones y 0 cambios, asi sucesivamente con cada array
 de distintos tamaños como se observa a continuacion:
             ->Elementos         ->Cambios       ->Iteraciones
@@ -274,35 +276,38 @@ de distintos tamaños como se observa a continuacion:
 n - 1, obteniendo como conclusion que entre más grande sea la entrada, 
 mayor sera nuestro problema, ya que se relaciona con la cantidad de ele-
 mentos en la lista, ademas, vemos como crece de manera uniforme, en esta
-prueba por cada 2000 elementos hay un aumento de 2000 en los cambios,
+prueba por cada 2000 elementos hay un aumento de 2000 en las iteraciones,
 usando la formula de razon de cambio en funciones obtenemos que:
-        Formula= (f(x1)-f(x2))/ x1-x2
+        Formula= (f(x1)-f(x2))/ (x1-x2)
                 = (4000-2000)/ (3999-1999)
                 = 1
-Lo que nos indica que por cada elemento en el array vamos a tener un crecimciento 
-de 1 en iteraciones, como es este caso:
+	Lo que nos indica que por cada elemento en el array vamos a tener un 
+crecimciento de 1 en iteraciones por cada elemento nuevo a en el array, 
+como es este caso:
                     ->Prueba con array de 20000 lineal
                         Tiempo de ejecución: 0
                         ENTRADAS AL CICLO FOR: 19999
                         CAMBIOS: 0
                         ITERACIONES DEL CICLO WHILE:  0
 
-
-                    ->Prueba2 con array de 20001 lineal
+                    ->Prueba 2 con array de 20001 lineal
                         Tiempo de ejecución: 0
                         ENTRADAS AL CICLO FOR: 20000
                         CAMBIOS: 0
                         ITERACIONES DEL CICLO WHILE:  0
+	Cuando tenemos 20000 elemenos, hacemos 19999 entradas en el for, pero
+cuando le agregamos un elemento al array hace 20000 entradas al for.
 
 ------------------------------------------------------------------------------------
-
 5- INSERTION SORT CUADRATICO.
-    En el caso de Insertion Sort Cuadrático, tenemos que realizar todos los 
+
+   En el caso de Insertion Sort Cuadrático, tenemos que realizar todos los 
 cambios, es decir, tenemos un array totalmente desordenado entonces, debemos
 hacer los cambios cada vez que hacemos un sub array, si tenemos un array de 
 5 elementos que esta desordenado hariamos algo asi:
-                        array = 5, 4, 3, 2, 1
-    Si analizamos  {5, 4} debemos cambiar 4 y obtenemos {4, 5}
+
+                       	array = 5, 4, 3, 2, 1
+   Si analizamos  {5, 4} debemos cambiar 4 y obtenemos {4, 5}
 Luego analizamos {4, 5, 3} y debemos cambiar el 3 dos veces obteniendo
 primero {4, 3, 7} y luego {3, 4, 5}.Posteriormente analizamos con el 
 siguiente elemento {3, 4, 5, 2}, el 2 debemos moverlo tres veces, al final
@@ -323,7 +328,7 @@ si tuvieramos un 6 elemento entonces serian 15 cambios totales y asi sucesivamen
                18 000           161991000           17999
                20 000           199990000           19999
 
-    En este caso, el comportamiento que vemos es el considerable aumento
+   En este caso, el comportamiento que vemos es el considerable aumento
 de cambios cada vez que hay un aumento en la cantidad de elementos, si vemos
 la diferecia entre los cambios del array de 2000 y el de 4000, es de 5999000,
 luego vemos la del de 4000 y la de 6000 y es de 9999000, la del de 6000 y el

@@ -31,8 +31,8 @@ usar un pivote fijo en con este tipo del listas.
                     14000             89684
                     15000             96617
                     16000             103182
-    En este caso se observa como el cambio entre el array de 1000 y de 2000 ele-
-mentos hay un cambio de 6515, entre el de 2000 y el de 3000 uno de 6652, entre
+    En este caso se observa como el cambio entre el array de 1000 y de 2000 elementos
+hay un cambio de 6515, entre el de 2000 y el de 3000 uno de 6652, entre
 el de 3000 y el de 6000 es de 6722 y asi sicesivamente, la diferencia varia entre
 los 6000 y los 7000 cambios entre mayor es la entrada por cada 1000 elemento, 
 pero no llega a ser uniforme ya que varia entre los elementos.
@@ -47,7 +47,7 @@ obtenemos entradas cada vez mas grandes
 casos, esto se da porque cuando escogemos el pivote se escoge al numero mayor
 o menor del array, entonces al dividir, nos queda un  arbol desvalanceado
 hacia un lado.
-    Para demostrar esto, use un algoritmo que colocara el pivote en el ultimos
+    Para demostrar esto, usé un algoritmo que colocara el pivote en el ultimo
 elemento y se le enviaron arrays ordenados de manera ascendente, haciendo
 que cada vez que dividiera se escogiera como pivote al numero mayor del array
 El comportamiento cuadratico se ve relejado en el creciemiento de la cantidad 
@@ -68,7 +68,7 @@ diferencia de 6001000 aprox, luego entre los de 4000 y 6000 hay una de 10001000
 aprox, entre el de 6000 y el de 8000 hay una de 14001000 aproximandamente y asi 
 sigue aumentando entre cada array de manera considerable y, mas importante, no 
 crece uniformemente. Este comportamiento tambien se observa si hacemos una
-grafica con los valores de cambio en cada array, pues tiene la forma de las
+gráfica con los valores de cambio en cada array, pues tiene la forma de las
 funciones cuadraticas, aumenta creando una forma similar a la de una U, o en
 este caso, media U.
 
@@ -77,22 +77,30 @@ este caso, media U.
 
    Comparando la cantidad de cambios que hizo el algoritmo en el peor de los
 casos con los que hizo el algoritmo escogiendo un pivote random es mejor usar 
-este, ya que si en una iterancion escogi de pivote uno de los elementos de los 
+este, ya que si en una iterancion escogí de pivote uno de los elementos de los 
 extremos puede que en la siguente iteracion no, esto porque no tengo un indicio
-de como se va a comportar el algoritmo.
+de como se va a comportar el algoritmo en cada iteracion, debido a la variacion 
+en cada una de ellas.
     Cuando estoy en caso promedio no importa tanto porque es cuestion de suerte
-la influencia tendra el pivote sobre mi algpritmo, puede que tenga suerte con
+la influencia que tendra el pivote sobre mi algpritmo, puede que tenga suerte con
 el random o puede que no, pero en este caso hay que tener en cuenta que el random
-aunemtara un poco la carga del algoritmo.
+aumentara un poco la carga del algoritmo. 
+	En resumen, cuando tenemos una lista ordenada, el pivote random es la mejor
+opcion, ya que nos ayuda a evitar el peor de los casos (cuando el pivote es uno
+de los minimos o maximos del array), cuando tenemos una lista totalmente desorde-
+nada no importa cual pivote utilicemos, ya que dependera de la posicion que se
+escoja como pivote y no podemos saber cual sera un elemento intermedio, indepen-
+dientemente de cual de las 2 formas usemos puede que se escoja un buen o un mal 
+pivote.
 
 -----------------------------------------------------------------------------------
 4- INSERTION SORT LINEAL
 
    Cuando nos encontramos con el mejor de los casos en el insertion sort
 no tenemos que hacer cambios, debido a que el algoritmo ya esta previamente
-ordenado, si vemos las iteraciones estan directamente relacionadas con la
-cantidad de elementos del array, si tengo un array de 200 elementos y estan
-ordenados se haran 199 itenaciones y 0 cambios, si tenemos uno de 300 se 
+ordenado, si vemos, las iteraciones estan directamente relacionadas con la
+cantidad de elementos del array, si tengo un array de 200 elementos y están
+ordenados se harán 199 itenaciones y 0 cambios, si tenemos uno de 300 se 
 realizarian 299 iteraciones y 0 cambios, asi sucesivamente con cada array
 de distintos tamaños como se observa a continuacion:
             ->Elementos         ->Cambios       ->Iteraciones
@@ -110,25 +118,27 @@ de distintos tamaños como se observa a continuacion:
 n - 1, obteniendo como conclusion que entre más grande sea la entrada, 
 mayor sera nuestro problema, ya que se relaciona con la cantidad de ele-
 mentos en la lista, ademas, vemos como crece de manera uniforme, en esta
-prueba por cada 2000 elementos hay un aumento de 2000 en los cambios,
+prueba por cada 2000 elementos hay un aumento de 2000 en las iteraciones,
 usando la formula de razon de cambio en funciones obtenemos que:
-        Formula= (f(x1)-f(x2))/ x1-x2
+        Formula= (f(x1)-f(x2))/ (x1-x2)
                 = (4000-2000)/ (3999-1999)
                 = 1
-Lo que nos indica que por cada elemento en el array vamos a tener un crecimciento 
-de 1 en iteraciones, como es este caso:
+	Lo que nos indica que por cada elemento en el array vamos a tener un 
+crecimciento de 1 en iteraciones por cada elemento nuevo a en el array, 
+como es este caso:
                     ->Prueba con array de 20000 lineal
                         Tiempo de ejecución: 0
                         ENTRADAS AL CICLO FOR: 19999
                         CAMBIOS: 0
                         ITERACIONES DEL CICLO WHILE:  0
 
-
-                    ->Prueba2 con array de 20001 lineal
+                    ->Prueba 2 con array de 20001 lineal
                         Tiempo de ejecución: 0
                         ENTRADAS AL CICLO FOR: 20000
                         CAMBIOS: 0
                         ITERACIONES DEL CICLO WHILE:  0
+	Cuando tenemos 20000 elemenos, hacemos 19999 entradas en el for, pero
+cuando le agregamos un elemento al array hace 20000 entradas al for.
 
 ------------------------------------------------------------------------------------
 5- INSERTION SORT CUADRATICO.
@@ -170,13 +180,25 @@ bios crece de forma exponecial.
 
 ------------------------------------------------------------------------------------
 7- LOGRAR UN FREETEXT LOGARITMICO O LINEAL.
+    En este caso use el algoritmo de rabin karp, cuyo tiempo es 
+O(patternLength + textLength), resultando como un algoritmo lineal, ya que nuestro
+O(n) aumentara en 1 por cada elemento o caracter que le agreguemos al patron que 
+estamos buscando o al texto en el que buscaremos.
+ ____________________________________________________________________________________
+         Tamaño de patron        Tamaño del texto           O(np+nt)
+ ------------------------------------------------------------------------------------
+                2                       10                     12
+                3                       10                     13
+                4                       10                     14
+                5                       10                     15
+                6                       10                     16
+--------------------------------------------------------------------------------------
+                2                       100                    102
+                3                       100                    103
+                4                       100                    104
+                5                       100                    105
+                6                       100                    106
 
-En este caso use el algoritmo de rabin karp, cuyo tiempo de en O(patternLength + 
-textLength), resultando como un algoritmo lineal, ya que nuestro O(n) aumentara 
-en 1 por cada elemento o caracter que le agreguemos al patron que estamos buscando.
-
-____________________________________________________________________________
----------------------------------Pruebas------------------------------------
 
 ____________________________________________________________________________
 ---------------------------------Pruebas------------------------------------
