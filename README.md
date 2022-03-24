@@ -6,9 +6,10 @@ estan los graficos de cada una de las funciones de acuerdo a los datos obtenidos
 en cada prueba.
 
 ---------------------------------Analisis-----------------------------------
+
 1-QUICKSORT LOGARITMICO
 
-    En el caso del quicksort n(log(n)) se uso un pivote random en una lista
+   En el caso del quicksort n(log(n)) se uso un pivote random en una lista
 ordenada de manera ascendente, en las pruebas con este pivote no podemos
 predecir como será el funcionamiento de este, pero tiende a ser mejor que 
 usar un pivote fijo en con este tipo del listas.
@@ -42,7 +43,7 @@ obtenemos entradas cada vez mas grandes
 -------------------------------------------------------------------------------
 2- QUICKSORT CUADRATICO
 
-    El quicksort cuadrático lo obtenemos cuando se trabaja con el peor de los
+   El quicksort cuadrático lo obtenemos cuando se trabaja con el peor de los
 casos, esto se da porque cuando escogemos el pivote se escoge al numero mayor
 o menor del array, entonces al dividir, nos queda un  arbol desvalanceado
 hacia un lado.
@@ -74,7 +75,7 @@ este caso, media U.
 ----------------------------------------------------------------------------------
 3-INFLUENCIA DEL PIVOTE FIJO Y ALEATORIO.
 
-    Comparando la cantidad de cambios que hizo el algoritmo en el peor de los
+   Comparando la cantidad de cambios que hizo el algoritmo en el peor de los
 casos con los que hizo el algoritmo escogiendo un pivote random es mejor usar 
 este, ya que si en una iterancion escogi de pivote uno de los elementos de los 
 extremos puede que en la siguente iteracion no, esto porque no tengo un indicio
@@ -87,7 +88,7 @@ aunemtara un poco la carga del algoritmo.
 -----------------------------------------------------------------------------------
 4- INSERTION SORT LINEAL
 
-    Cuando nos encontramos con el mejor de los casos en el insertion sort
+   Cuando nos encontramos con el mejor de los casos en el insertion sort
 no tenemos que hacer cambios, debido a que el algoritmo ya esta previamente
 ordenado, si vemos las iteraciones estan directamente relacionadas con la
 cantidad de elementos del array, si tengo un array de 200 elementos y estan
@@ -132,13 +133,13 @@ de 1 en iteraciones, como es este caso:
 ------------------------------------------------------------------------------------
 5- INSERTION SORT CUADRATICO.
 
-    En el caso de Insertion Sort Cuadrático, tenemos que realizar todos los 
+   En el caso de Insertion Sort Cuadrático, tenemos que realizar todos los 
 cambios, es decir, tenemos un array totalmente desordenado entonces, debemos
 hacer los cambios cada vez que hacemos un sub array, si tenemos un array de 
 5 elementos que esta desordenado hariamos algo asi:
 
-                        array = 5, 4, 3, 2, 1
-    Si analizamos  {5, 4} debemos cambiar 4 y obtenemos {4, 5}
+                       	array = 5, 4, 3, 2, 1
+   Si analizamos  {5, 4} debemos cambiar 4 y obtenemos {4, 5}
 Luego analizamos {4, 5, 3} y debemos cambiar el 3 dos veces obteniendo
 primero {4, 3, 7} y luego {3, 4, 5}.Posteriormente analizamos con el 
 siguiente elemento {3, 4, 5, 2}, el 2 debemos moverlo tres veces, al final
@@ -159,7 +160,7 @@ si tuvieramos un 6 elemento entonces serian 15 cambios totales y asi sucesivamen
                18 000           161991000           17999
                20 000           199990000           19999
 
-    En este caso, el comportamiento que vemos es el considerable aumento
+   En este caso, el comportamiento que vemos es el considerable aumento
 de cambios cada vez que hay un aumento en la cantidad de elementos, si vemos
 la diferecia entre los cambios del array de 2000 y el de 4000, es de 5999000,
 luego vemos la del de 4000 y la de 6000 y es de 9999000, la del de 6000 y el
@@ -173,6 +174,9 @@ bios crece de forma exponecial.
 En este caso use el algoritmo de rabin karp, cuyo tiempo de en O(patternLength + 
 textLength), resultando como un algoritmo lineal, ya que nuestro O(n) aumentara 
 en 1 por cada elemento o caracter que le agreguemos al patron que estamos buscando.
+
+____________________________________________________________________________
+---------------------------------Pruebas------------------------------------
 
 ____________________________________________________________________________
 ---------------------------------Pruebas------------------------------------
@@ -659,4 +663,5 @@ Encontrado en: 3379309
 -----------------------------------------------------------------------------
 Apariciones de The next day: 58
 Tiempo de busqueda: 0.275
+
 
