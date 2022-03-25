@@ -200,19 +200,19 @@ estamos buscando o al texto en el que buscaremos.
                 6                       100                    106
 
 
-____________________________________________________________________________
----------------------------------Pruebas------------------------------------
-QUICKSORT_____________________________________________________________________
+_______________________________________________________________________________________
+--------------------------------------Pruebas------------------------------------------
+QUICKSORT______________________________________________________________________________
 
----------------------PRUEBA CON PIVOTE EN ULTIMO ELEMENTO---------------------
+----------------------------PRUEBA CON PIVOTE EN ULTIMO ELEMENTO-----------------------
 ->Prueba con: 10 5 8 9 2 18 20 -1 2 -1000 200 201 2999 67 17 -2000 
-		LLAMADAS A LA FUNCION QUICK: 21
-		ENTRADAS AL CICLO FOR: 54
-		CAMBIOS: 27
-		Tiempo de ejecucion en microsegundos: 0
+	LLAMADAS A LA FUNCION QUICK: 21
+	ENTRADAS AL CICLO FOR: 54
+	CAMBIOS: 27
+	Tiempo de ejecucion en microsegundos: 0
 Array ordenado: -2000 -1000 -1 2 2 5 8 9 10 17 18 20 67 200 201 2999 
 
----------------------------PRUEBA CON PIVOTE RANDOM---------------------------
+------------------------------PRUEBA CON PIVOTE RANDOM---------------------------------
 Array sin ordenar: 10 5 8 9 2 18 20 -1 2 -1000 200 201 2999 67 17 -2000 
 		LLAMADAS A LA FUNCION QUICK: 21
 		ENTRADAS AL CICLO FOR: 54
@@ -220,6 +220,9 @@ Array sin ordenar: 10 5 8 9 2 18 20 -1 2 -1000 200 201 2999 67 17 -2000
 		Tiempo de ejecucion en microsegundos: 0
 Array ordenado: -2000 -1000 -1 2 2 5 8 9 10 17 18 20 67 200 201 2999 
 
+_______________________________________________________________________________________
+Peor de los casos del quicksort
+_______________________________________________________________________________________
 
  ->Prueba con array de 2000 en el peor de los casos
 	PIVOTE FIJO:
@@ -232,7 +235,7 @@ Array ordenado: -2000 -1000 -1 2 2 5 8 9 10 17 18 20 67 200 201 2999
 		ENTRADAS AL CICLO FOR: 25300
 		CAMBIOS: 13297
 		Tiempo de ejecucion en microsegundos: 0
-
+_______________________________________________________________________________________
  ->Prueba con array de 4000 en el peor de los casos
 	PIVOTE FIJO:
 		LLAMADAS A LA FUNCION QUICK: 7999
@@ -244,7 +247,7 @@ Array ordenado: -2000 -1000 -1 2 2 5 8 9 10 17 18 20 67 200 201 2999
 		ENTRADAS AL CICLO FOR: 54576
 		CAMBIOS: 29052
 		Tiempo de ejecucion en microsegundos: 1000
-
+_______________________________________________________________________________________
  ->Prueba con array de 6000 en el peor de los casos
 	PIVOTE FIJO:
 		LLAMADAS A LA FUNCION QUICK: 11999
@@ -256,7 +259,7 @@ Array ordenado: -2000 -1000 -1 2 2 5 8 9 10 17 18 20 67 200 201 2999
 		ENTRADAS AL CICLO FOR: 87459
 		CAMBIOS: 48705
 		Tiempo de ejecucion en microsegundos: 1002
-
+_______________________________________________________________________________________
  ->Prueba con array de 8000 en el peor de los casos
 	PIVOTE FIJO:
 		LLAMADAS A LA FUNCION QUICK: 15999
@@ -268,7 +271,7 @@ Array ordenado: -2000 -1000 -1 2 2 5 8 9 10 17 18 20 67 200 201 2999
 		ENTRADAS AL CICLO FOR: 123596
 		CAMBIOS: 60429
 		Tiempo de ejecucion en microsegundos: 1001
-
+_______________________________________________________________________________________
  ->Prueba con array de 10000 en el peor de los casos
 	PIVOTE FIJO:
 		LLAMADAS A LA FUNCION QUICK: 19999
@@ -280,7 +283,7 @@ Array ordenado: -2000 -1000 -1 2 2 5 8 9 10 17 18 20 67 200 201 2999
 		ENTRADAS AL CICLO FOR: 148025
 		CAMBIOS: 83036
 		Tiempo de ejecucion en microsegundos: 1000
-
+_______________________________________________________________________________________
  ->Prueba con array de 12000 en el peor de los casos
 	PIVOTE FIJO:
 		LLAMADAS A LA FUNCION QUICK: 23999
@@ -292,7 +295,7 @@ Array ordenado: -2000 -1000 -1 2 2 5 8 9 10 17 18 20 67 200 201 2999
 		ENTRADAS AL CICLO FOR: 189162
 		CAMBIOS: 101737
 		Tiempo de ejecucion en microsegundos: 3994
-
+_______________________________________________________________________________________
  ->Prueba con array de 14000 en el peor de los casos
 	PIVOTE FIJO:
 		LLAMADAS A LA FUNCION QUICK: 27999
@@ -304,7 +307,7 @@ Array ordenado: -2000 -1000 -1 2 2 5 8 9 10 17 18 20 67 200 201 2999
 		ENTRADAS AL CICLO FOR: 218472
 		CAMBIOS: 119731
 		Tiempo de ejecucion en microsegundos: 2002
-
+_______________________________________________________________________________________
  ->Prueba con array de 16000 en el peor de los casos
 	PIVOTE FIJO:
 		LLAMADAS A LA FUNCION QUICK: 31999
@@ -316,8 +319,7 @@ Array ordenado: -2000 -1000 -1 2 2 5 8 9 10 17 18 20 67 200 201 2999
 		ENTRADAS AL CICLO FOR: 299593
 		CAMBIOS: 133241
 		Tiempo de ejecucion en microsegundos: 3001
-
-
+_______________________________________________________________________________________
  ->Prueba con array de 18000 en el peor de los casos
 	PIVOTE FIJO:
 		LLAMADAS A LA FUNCION QUICK: 35999
@@ -329,8 +331,7 @@ Array ordenado: -2000 -1000 -1 2 2 5 8 9 10 17 18 20 67 200 201 2999
 		ENTRADAS AL CICLO FOR: 491679
 		CAMBIOS: 154900
 		Tiempo de ejecucion en microsegundos: 2999
-
-
+_______________________________________________________________________________________
  ->Prueba con array de 20000 en el peor de los casos
 	PIVOTE FIJO:
 		LLAMADAS A LA FUNCION QUICK: 39999
@@ -343,121 +344,125 @@ Array ordenado: -2000 -1000 -1 2 2 5 8 9 10 17 18 20 67 200 201 2999
 		CAMBIOS: 171958
 		Tiempo de ejecucion en microsegundos: 3001
 
-'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-
- ->Prueba con array de 1000 en el caso promedio
+_________________________________________________________________________________________________________
+---------------------------------------------------------------------------------------------------------
+Caso promedio QuickSort
+---------------------------------------------------------------------------------------------------------
+->Prueba con array de 1000 en el caso promedio
 		LLAMADAS A LA FUNCION QUICK: 1297
 		ENTRADAS AL CICLO FOR: 11096
 		CAMBIOS: 5511
 		Tiempo de ejecucion en microsegundos: 0
+		
+_________________________________________________________________________________________________________
+->Prueba con array de 2000 en el caso promedio
+	LLAMADAS A LA FUNCION QUICK: 2601
+	ENTRADAS AL CICLO FOR: 29840
+	CAMBIOS: 12026
+	Tiempo de ejecucion en microsegundos: 1054
 
-
- ->Prueba con array de 2000 en el caso promedio
-		LLAMADAS A LA FUNCION QUICK: 2601
-		ENTRADAS AL CICLO FOR: 29840
-		CAMBIOS: 12026
-		Tiempo de ejecucion en microsegundos: 1054
-
-
+_________________________________________________________________________________________________________
  ->Prueba con array de 3000 en el caso promedio
 		LLAMADAS A LA FUNCION QUICK: 3901
 		ENTRADAS AL CICLO FOR: 50116
 		CAMBIOS: 18678
 		Tiempo de ejecucion en microsegundos: 1004
 
-
+_________________________________________________________________________________________________________
  ->Prueba con array de 4000 en el caso promedio
 		LLAMADAS A LA FUNCION QUICK: 5209
 		ENTRADAS AL CICLO FOR: 70910
 		CAMBIOS: 25400
 		Tiempo de ejecucion en microsegundos: 1998
 
-
+_________________________________________________________________________________________________________
  ->Prueba con array de 5000 en el caso promedio
 		LLAMADAS A LA FUNCION QUICK: 6507
 		ENTRADAS AL CICLO FOR: 93265
 		CAMBIOS: 31695
 		Tiempo de ejecucion en microsegundos: 1000
 
-
+_________________________________________________________________________________________________________
  ->Prueba con array de 6000 en el caso promedio
 		LLAMADAS A LA FUNCION QUICK: 7815
 		ENTRADAS AL CICLO FOR: 115559
 		CAMBIOS: 38307
 		Tiempo de ejecucion en microsegundos: 2001
 
-
+_________________________________________________________________________________________________________
  ->Prueba con array de 7000 en el caso promedio
 		LLAMADAS A LA FUNCION QUICK: 9117
 		ENTRADAS AL CICLO FOR: 139336
 		CAMBIOS: 44905
 		Tiempo de ejecucion en microsegundos: 2002
 
-
+_________________________________________________________________________________________________________
  ->Prueba con array de 8000 en el caso promedio
 		LLAMADAS A LA FUNCION QUICK: 10419
 		ENTRADAS AL CICLO FOR: 163897
 		CAMBIOS: 51458
 		Tiempo de ejecucion en microsegundos: 2999
 
-
+_________________________________________________________________________________________________________
  ->Prueba con array de 9000 en el caso promedio
 		LLAMADAS A LA FUNCION QUICK: 11721
 		ENTRADAS AL CICLO FOR: 189612
 		CAMBIOS: 58141
 		Tiempo de ejecucion en microsegundos: 4001
 
-
+_________________________________________________________________________________________________________
  ->Prueba con array de 10000 en el caso promedio
 		LLAMADAS A LA FUNCION QUICK: 13025
 		ENTRADAS AL CICLO FOR: 209420
 		CAMBIOS: 63584
 		Tiempo de ejecucion en microsegundos: 4001
 
-
+_________________________________________________________________________________________________________
  ->Prueba con array de 11000 en el caso promedio
 		LLAMADAS A LA FUNCION QUICK: 14323
 		ENTRADAS AL CICLO FOR: 236227
 		CAMBIOS: 69913
 		Tiempo de ejecucion en microsegundos: 4001
 
-
+_________________________________________________________________________________________________________
  ->Prueba con array de 12000 en el caso promedio
 		LLAMADAS A LA FUNCION QUICK: 15633
 		ENTRADAS AL CICLO FOR: 263380
 		CAMBIOS: 76670
 		Tiempo de ejecucion en microsegundos: 4999
 
-
+_________________________________________________________________________________________________________
  ->Prueba con array de 13000 en el caso promedio
 		LLAMADAS A LA FUNCION QUICK: 16935
 		ENTRADAS AL CICLO FOR: 292869
 		CAMBIOS: 83706
 		Tiempo de ejecucion en microsegundos: 5004
 
-
+_________________________________________________________________________________________________________
  ->Prueba con array de 14000 en el caso promedio
 		LLAMADAS A LA FUNCION QUICK: 18229
 		ENTRADAS AL CICLO FOR: 323036
 		CAMBIOS: 89684
 		Tiempo de ejecucion en microsegundos: 3996
 
-
+_________________________________________________________________________________________________________
  ->Prueba con array de 15000 en el caso promedio
 		LLAMADAS A LA FUNCION QUICK: 19541
 		ENTRADAS AL CICLO FOR: 353648
 		CAMBIOS: 96617
 		Tiempo de ejecucion en microsegundos: 4000
 
-
+_________________________________________________________________________________________________________
  ->Prueba con array de 16000 en el caso promedio
 		LLAMADAS A LA FUNCION QUICK: 20841
 		ENTRADAS AL CICLO FOR: 385170
 		CAMBIOS: 103182
 		Tiempo de ejecucion en microsegundos: 4000
 
+_________________________________________________________________________________________________________
+INSERTION SORT
+_________________________________________________________________________________________________________
 
-INSERTION SORT_____________________________________________________________________
 Array sin ordenar: 
 10 5 8 9 2 18 20 -1 2 -1000 200 201 2999 67 17 -2000 
 TIEMPO DE EJECUCION: 0
@@ -466,147 +471,148 @@ CAMBIOS: 53
 Array ordenado: 
 -2000 -1000 -1 2 2 5 8 9 10 17 18 20 67 200 201 2999 
 
-
+_________________________________________________________________________________________________________
  ->Prueba con array de 2000 lineal
 		TIEMPO DE EJECUCION: 0
 		ENTRADAS AL CICLO FOR: 1999
 		CAMBIOS: 0
 		ITERACIONES DEL CICLO WHILE:  0
 
-
+_________________________________________________________________________________________________________
  ->Prueba con array de 4000 lineal
 		TIEMPO DE EJECUCION: 0
 		ENTRADAS AL CICLO FOR: 3999
 		CAMBIOS: 0
 		ITERACIONES DEL CICLO WHILE:  0
 
-
+_________________________________________________________________________________________________________
  ->Prueba con array de 6000 lineal
 		TIEMPO DE EJECUCION: 0
 		ENTRADAS AL CICLO FOR: 5999
 		CAMBIOS: 0
 		ITERACIONES DEL CICLO WHILE:  0
 
-
+_________________________________________________________________________________________________________
  ->Prueba con array de 8000 lineal
 		TIEMPO DE EJECUCION: 0
 		ENTRADAS AL CICLO FOR: 7999
 		CAMBIOS: 0
 		ITERACIONES DEL CICLO WHILE:  0
 
-
+_________________________________________________________________________________________________________
  ->Prueba con array de 10000 lineal
 		TIEMPO DE EJECUCION: 0
 		ENTRADAS AL CICLO FOR: 9999
 		CAMBIOS: 0
 		ITERACIONES DEL CICLO WHILE:  0
 
-
+_________________________________________________________________________________________________________
  ->Prueba con array de 12000 lineal
 		TIEMPO DE EJECUCION: 0
 		ENTRADAS AL CICLO FOR: 11999
 		CAMBIOS: 0
 		ITERACIONES DEL CICLO WHILE:  0
 
-
+_________________________________________________________________________________________________________
  ->Prueba con array de 14000 lineal
 		TIEMPO DE EJECUCION: 0
 		ENTRADAS AL CICLO FOR: 13999
 		CAMBIOS: 0
 		ITERACIONES DEL CICLO WHILE:  0
 
-
+_________________________________________________________________________________________________________
  ->Prueba con array de 16000 lineal
 		TIEMPO DE EJECUCION: 1000
 		ENTRADAS AL CICLO FOR: 15999
 		CAMBIOS: 0
 		ITERACIONES DEL CICLO WHILE:  0
 
-
+_________________________________________________________________________________________________________
  ->Prueba con array de 18000 lineal
 		TIEMPO DE EJECUCION: 0
 		ENTRADAS AL CICLO FOR: 17999
 		CAMBIOS: 0
 		ITERACIONES DEL CICLO WHILE:  0
 
-
+_________________________________________________________________________________________________________
  ->Prueba con array de 20000 lineal
 		TIEMPO DE EJECUCION: 1001
 		ENTRADAS AL CICLO FOR: 19999
 		CAMBIOS: 0
 		ITERACIONES DEL CICLO WHILE:  0
 
-
+_________________________________________________________________________________________________________
  ->Prueba con array de 2000 cuadratico
 		TIEMPO DE EJECUCION: 7997
 		ENTRADAS AL CICLO FOR: 1999
 		CAMBIOS: 1999000
 		ITERACIONES DEL CICLO WHILE:  1999000
 
-
+_________________________________________________________________________________________________________
  ->Prueba con array de 4000 cuadratico
 		TIEMPO DE EJECUCION: 33003
 		ENTRADAS AL CICLO FOR: 3999
 		CAMBIOS: 7998000
 		ITERACIONES DEL CICLO WHILE:  7998000
 
-
+_________________________________________________________________________________________________________
  ->Prueba con array de 6000 cuadratico
 		TIEMPO DE EJECUCION: 78007
 		ENTRADAS AL CICLO FOR: 5999
 		CAMBIOS: 17997000
 		ITERACIONES DEL CICLO WHILE:  17997000
 
-
+_________________________________________________________________________________________________________
  ->Prueba con array de 8000 cuadratico
 		TIEMPO DE EJECUCION: 167013
 		ENTRADAS AL CICLO FOR: 7999
 		CAMBIOS: 31996000
 		ITERACIONES DEL CICLO WHILE:  31996000
 
-
+_________________________________________________________________________________________________________
  ->Prueba con array de 10000 cuadratico
 		TIEMPO DE EJECUCION: 226015
 		ENTRADAS AL CICLO FOR: 9999
 		CAMBIOS: 49995000
 		ITERACIONES DEL CICLO WHILE:  49995000
 
-
+_________________________________________________________________________________________________________
  ->Prueba con array de 12000 cuadratico
 		TIEMPO DE EJECUCION: 344027
 		ENTRADAS AL CICLO FOR: 11999
 		CAMBIOS: 71994000
 		ITERACIONES DEL CICLO WHILE:  71994000
 
-
+_________________________________________________________________________________________________________
  ->Prueba con array de 14000 cuadratico
 		TIEMPO DE EJECUCION: 361029
 		ENTRADAS AL CICLO FOR: 13999
 		CAMBIOS: 97993000
 		ITERACIONES DEL CICLO WHILE:  97993000
 
-
+_________________________________________________________________________________________________________
  ->Prueba con array de 16000 cuadratico
 		TIEMPO DE EJECUCION: 508036
 		ENTRADAS AL CICLO FOR: 15999
 		CAMBIOS: 127992000
 		ITERACIONES DEL CICLO WHILE:  127992000
 
-
+_________________________________________________________________________________________________________
  ->Prueba con array de 18000 cuadratico
 		TIEMPO DE EJECUCION: 691054
 		ENTRADAS AL CICLO FOR: 17999
 		CAMBIOS: 161991000
 		ITERACIONES DEL CICLO WHILE:  161991000
 
-
+_________________________________________________________________________________________________________
  ->Prueba con array de 20000 cuadratico
 		TIEMPO DE EJECUCION: 1.09908e+006
 		ENTRADAS AL CICLO FOR: 19999
 		CAMBIOS: 199990000
 		ITERACIONES DEL CICLO WHILE:  199990000
 
-_________________________________FREETEXT____________________________________
+_________________________________________________________________________________________________________
+________________________________________________FREETEXT_________________________________________________
 -----------------------------------------------------------------------------
 Cargando texto...
 El texto ha sido cargado con exito
@@ -622,6 +628,7 @@ Encontrado en: 2815023
 -----------------------------------------------------------------------------
 Apariciones de the city was still quiet and still cool: 2
 Tiempo de busqueda: 0.34
+_________________________________________________________________________________________________________
 -----------------------------------------------------------------------------
 Patron a buscar : The next day
 -----------------------------------------------------------------------------
