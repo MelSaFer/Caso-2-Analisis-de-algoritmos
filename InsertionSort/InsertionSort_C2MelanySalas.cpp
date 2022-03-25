@@ -335,4 +335,156 @@ luego vemos la del de 4000 y la de 6000 y es de 9999000, la del de 6000 y el
 de 8000 es de 13999000 y asi sigue creciendo considerablemente y de manera
 desigulal, esto porque entre mas grande en el problema, la cantidad de cam-
 bios crece de forma exponecial.
+
+------------------------------------------------------------------------------------
+Pruebas de ejecucion
+
+INSERTION SORT_____________________________________________________________________
+Array sin ordenar:
+10 5 8 9 2 18 20 -1 2 -1000 200 201 2999 67 17 -2000
+TIEMPO DE EJECUCION: 3002
+ENTRADAS AL CICLO FOR: 15
+CAMBIOS: 53
+Array ordenado:
+-2000 -1000 -1 2 2 5 8 9 10 17 18 20 67 200 201 2999
+
+
+ ->Prueba con array de 2000 lineal
+                TIEMPO DE EJECUCION: 0
+                ENTRADAS AL CICLO FOR: 1999
+                CAMBIOS: 0
+                ITERACIONES DEL CICLO WHILE:  0
+
+
+ ->Prueba con array de 4000 lineal
+                TIEMPO DE EJECUCION: 0
+                ENTRADAS AL CICLO FOR: 3999
+                CAMBIOS: 0
+                ITERACIONES DEL CICLO WHILE:  0
+
+
+ ->Prueba con array de 6000 lineal
+                TIEMPO DE EJECUCION: 996
+                ENTRADAS AL CICLO FOR: 5999
+                CAMBIOS: 0
+                ITERACIONES DEL CICLO WHILE:  0
+
+
+ ->Prueba con array de 8000 lineal
+                TIEMPO DE EJECUCION: 0
+                ENTRADAS AL CICLO FOR: 7999
+                CAMBIOS: 0
+                ITERACIONES DEL CICLO WHILE:  0
+
+
+ ->Prueba con array de 10000 lineal
+                TIEMPO DE EJECUCION: 0
+                ENTRADAS AL CICLO FOR: 9999
+                CAMBIOS: 0
+                ITERACIONES DEL CICLO WHILE:  0
+
+
+ ->Prueba con array de 12000 lineal
+                TIEMPO DE EJECUCION: 0
+                ENTRADAS AL CICLO FOR: 11999
+                CAMBIOS: 0
+                ITERACIONES DEL CICLO WHILE:  0
+
+
+ ->Prueba con array de 14000 lineal
+                TIEMPO DE EJECUCION: 0
+                ENTRADAS AL CICLO FOR: 13999
+                CAMBIOS: 0
+                ITERACIONES DEL CICLO WHILE:  0
+
+
+ ->Prueba con array de 16000 lineal
+                TIEMPO DE EJECUCION: 0
+                ENTRADAS AL CICLO FOR: 15999
+                CAMBIOS: 0
+                ITERACIONES DEL CICLO WHILE:  0
+
+
+ ->Prueba con array de 18000 lineal
+                TIEMPO DE EJECUCION: 0
+                ENTRADAS AL CICLO FOR: 17999
+                CAMBIOS: 0
+                ITERACIONES DEL CICLO WHILE:  0
+
+
+ ->Prueba con array de 20000 lineal
+                TIEMPO DE EJECUCION: 0
+                ENTRADAS AL CICLO FOR: 19999
+                CAMBIOS: 0
+                ITERACIONES DEL CICLO WHILE:  0
+
+
+ ->Prueba con array de 2000 cuadratico
+                TIEMPO DE EJECUCION: 9004
+                ENTRADAS AL CICLO FOR: 1999
+                CAMBIOS: 1999000
+                ITERACIONES DEL CICLO WHILE:  1999000
+
+
+ ->Prueba con array de 4000 cuadratico
+                TIEMPO DE EJECUCION: 37001
+                ENTRADAS AL CICLO FOR: 3999
+                CAMBIOS: 7998000
+                ITERACIONES DEL CICLO WHILE:  7998000
+
+
+ ->Prueba con array de 6000 cuadratico
+                TIEMPO DE EJECUCION: 98008
+                ENTRADAS AL CICLO FOR: 5999
+                CAMBIOS: 17997000
+                ITERACIONES DEL CICLO WHILE:  17997000
+
+
+ ->Prueba con array de 8000 cuadratico
+                TIEMPO DE EJECUCION: 182013
+                ENTRADAS AL CICLO FOR: 7999
+                CAMBIOS: 31996000
+                ITERACIONES DEL CICLO WHILE:  31996000
+
+
+ ->Prueba con array de 10000 cuadratico
+                TIEMPO DE EJECUCION: 284018
+                ENTRADAS AL CICLO FOR: 9999
+                CAMBIOS: 49995000
+                ITERACIONES DEL CICLO WHILE:  49995000
+
+
+ ->Prueba con array de 12000 cuadratico
+                TIEMPO DE EJECUCION: 460036
+                ENTRADAS AL CICLO FOR: 11999
+                CAMBIOS: 71994000
+                ITERACIONES DEL CICLO WHILE:  71994000
+
+
+ ->Prueba con array de 14000 cuadratico
+                TIEMPO DE EJECUCION: 407029
+                ENTRADAS AL CICLO FOR: 13999
+                CAMBIOS: 97993000
+                ITERACIONES DEL CICLO WHILE:  97993000
+
+
+ ->Prueba con array de 16000 cuadratico
+                TIEMPO DE EJECUCION: 850059
+                ENTRADAS AL CICLO FOR: 15999
+                CAMBIOS: 127992000
+                ITERACIONES DEL CICLO WHILE:  127992000
+
+
+ ->Prueba con array de 18000 cuadratico
+                TIEMPO DE EJECUCION: 1.18209e+006
+                ENTRADAS AL CICLO FOR: 17999
+                CAMBIOS: 161991000
+                ITERACIONES DEL CICLO WHILE:  161991000
+
+
+ ->Prueba con array de 20000 cuadratico
+                TIEMPO DE EJECUCION: 976072
+                ENTRADAS AL CICLO FOR: 19999
+                CAMBIOS: 199990000
+                ITERACIONES DEL CICLO WHILE:  199990000
 */

@@ -162,5 +162,86 @@ que le agreguemos al patron que estamos buscando o al texto en el que buscaremos
                     5                       100                    105
                     6                       100                    106
 
+-----------------------------------------------------------------------------
 
+Pruebas de ejecucion
+-----------------------------------------------------------------------------
+Cargando texto...
+El texto ha sido cargado con exito
+Tiempo de cargado en microsegundos: 2374175
+Presione una tecla para continuar . . .
+
+-----------------------------------------------------------------------------
+Patron a buscar : the city was still quiet and still cool
+-----------------------------------------------------------------------------
+Presione una tecla para continuar . . .
+Encontrado en: 1109249
+Encontrado en: 2815023
+-----------------------------------------------------------------------------
+Apariciones de the city was still quiet and still cool: 2
+Tiempo de busqueda en microsegundos: 340027
+
+-----------------------------------------------------------------------------
+Patron a buscar : The next day
+-----------------------------------------------------------------------------
+Presione una tecla para continuar . . .
+Encontrado en: 9418
+Encontrado en: 73579
+Encontrado en: 254087
+Encontrado en: 355885
+Encontrado en: 434888
+Encontrado en: 640491
+Encontrado en: 745859
+Encontrado en: 754926
+Encontrado en: 770844
+Encontrado en: 772450
+Encontrado en: 817067
+Encontrado en: 855033
+Encontrado en: 878500
+Encontrado en: 928206
+Encontrado en: 932143
+Encontrado en: 953052
+Encontrado en: 973876
+Encontrado en: 1011862
+Encontrado en: 1055687
+Encontrado en: 1200670
+Encontrado en: 1201965
+Encontrado en: 1300808
+Encontrado en: 1428346
+Encontrado en: 1479741
+Encontrado en: 1520260
+Encontrado en: 1621287
+Encontrado en: 1625508
+Encontrado en: 1673535
+Encontrado en: 1715192
+Encontrado en: 1779353
+Encontrado en: 1959861
+Encontrado en: 2061659
+Encontrado en: 2140662
+Encontrado en: 2346265
+Encontrado en: 2451633
+Encontrado en: 2460700
+Encontrado en: 2476618
+Encontrado en: 2478224
+Encontrado en: 2522841
+Encontrado en: 2560807
+Encontrado en: 2584274
+Encontrado en: 2633980
+Encontrado en: 2637917
+Encontrado en: 2658826
+Encontrado en: 2679650
+Encontrado en: 2717636
+Encontrado en: 2761461
+Encontrado en: 2906444
+Encontrado en: 2907739
+Encontrado en: 3006582
+Encontrado en: 3134120
+Encontrado en: 3185515
+Encontrado en: 3226034
+Encontrado en: 3327061
+Encontrado en: 3331282
+Encontrado en: 3379309
+-----------------------------------------------------------------------------
+Apariciones de The next day: 58
+Tiempo de busqueda en microsegundos: 509036
 */

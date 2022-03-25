@@ -483,6 +483,262 @@ escoja como pivote y no podemos saber cual sera un elemento intermedio, indepen-
 dientemente de cual de las 2 formas usemos puede que se escoja un buen o un mal 
 pivote.
 
+----------------------------------------------------------------------------------
+Pruebas de ejecucion.
+QUICKSORT_____________________________________________________________________
 
+---------------------PRUEBA CON PIVOTE EN ULTIMO ELEMENTO---------------------
+->Prueba con: 10 5 8 9 2 18 20 -1 2 -1000 200 201 2999 67 17 -2000
+                LLAMADAS A LA FUNCION QUICK: 21
+                ENTRADAS AL CICLO FOR: 54
+                CAMBIOS: 27
+                Tiempo de ejecucion en microsegundos: 0
+Array ordenado: -2000 -1000 -1 2 2 5 8 9 10 17 18 20 67 200 201 2999
+
+---------------------------PRUEBA CON PIVOTE RANDOM---------------------------
+Array sin ordenar: 10 5 8 9 2 18 20 -1 2 -1000 200 201 2999 67 17 -2000
+                LLAMADAS A LA FUNCION QUICK: 23
+                ENTRADAS AL CICLO FOR: 56
+                CAMBIOS: 41
+                Tiempo de ejecucion en microsegundos: 0
+Array ordenado: -2000 -1000 -1 2 2 5 8 9 10 17 18 20 67 200 201 2999
+
+
+ ->Prueba con array de 2000 en el peor de los casos
+        PIVOTE FIJO:
+                LLAMADAS A LA FUNCION QUICK: 3999
+                ENTRADAS AL CICLO FOR: 1999000
+                CAMBIOS: 2000999
+                Tiempo de ejecucion en microsegundos: 16001
+        PIVOTE RANDOM:
+                LLAMADAS A LA FUNCION QUICK: 2541
+                ENTRADAS AL CICLO FOR: 24554
+                CAMBIOS: 12833
+                Tiempo de ejecucion en microsegundos: 0
+
+ ->Prueba con array de 4000 en el peor de los casos
+        PIVOTE FIJO:
+                LLAMADAS A LA FUNCION QUICK: 7999
+                ENTRADAS AL CICLO FOR: 7998000
+                CAMBIOS: 8001999
+                Tiempo de ejecucion en microsegundos: 76003
+        PIVOTE RANDOM:
+                LLAMADAS A LA FUNCION QUICK: 5087
+                ENTRADAS AL CICLO FOR: 54545
+                CAMBIOS: 30023
+                Tiempo de ejecucion en microsegundos: 0
+
+ ->Prueba con array de 6000 en el peor de los casos
+        PIVOTE FIJO:
+                LLAMADAS A LA FUNCION QUICK: 11999
+                ENTRADAS AL CICLO FOR: 17997000
+                CAMBIOS: 18002999
+                Tiempo de ejecucion en microsegundos: 178010
+        PIVOTE RANDOM:
+                LLAMADAS A LA FUNCION QUICK: 9115
+                ENTRADAS AL CICLO FOR: 85293
+                CAMBIOS: 48971
+                Tiempo de ejecucion en microsegundos: 998
+
+ ->Prueba con array de 8000 en el peor de los casos
+        PIVOTE FIJO:
+                LLAMADAS A LA FUNCION QUICK: 15999
+                ENTRADAS AL CICLO FOR: 31996000
+                CAMBIOS: 32003999
+                Tiempo de ejecucion en microsegundos: 334025
+        PIVOTE RANDOM:
+                LLAMADAS A LA FUNCION QUICK: 12173
+                ENTRADAS AL CICLO FOR: 121548
+                CAMBIOS: 64183
+                Tiempo de ejecucion en microsegundos: 2002
+
+ ->Prueba con array de 10000 en el peor de los casos
+        PIVOTE FIJO:
+                LLAMADAS A LA FUNCION QUICK: 19999
+                ENTRADAS AL CICLO FOR: 49995000
+                CAMBIOS: 50004999
+                Tiempo de ejecucion en microsegundos: 482036
+        PIVOTE RANDOM:
+                LLAMADAS A LA FUNCION QUICK: 15213
+                ENTRADAS AL CICLO FOR: 229284
+                CAMBIOS: 80514
+                Tiempo de ejecucion en microsegundos: 1999
+
+ ->Prueba con array de 12000 en el peor de los casos
+        PIVOTE FIJO:
+                LLAMADAS A LA FUNCION QUICK: 23999
+                ENTRADAS AL CICLO FOR: 71994000
+                CAMBIOS: 72005999
+                Tiempo de ejecucion en microsegundos: 738059
+        PIVOTE RANDOM:
+                LLAMADAS A LA FUNCION QUICK: 12001
+                ENTRADAS AL CICLO FOR: 262687
+                CAMBIOS: 106157
+                Tiempo de ejecucion en microsegundos: 2992
+
+ ->Prueba con array de 14000 en el peor de los casos
+        PIVOTE FIJO:
+                LLAMADAS A LA FUNCION QUICK: 27999
+                ENTRADAS AL CICLO FOR: 97993000
+                CAMBIOS: 98006999
+                Tiempo de ejecucion en microsegundos: 1.04108e+006
+        PIVOTE RANDOM:
+                LLAMADAS A LA FUNCION QUICK: 20075
+                ENTRADAS AL CICLO FOR: 302001
+                CAMBIOS: 124968
+                Tiempo de ejecucion en microsegundos: 2998
+
+ ->Prueba con array de 16000 en el peor de los casos
+        PIVOTE FIJO:
+                LLAMADAS A LA FUNCION QUICK: 31999
+                ENTRADAS AL CICLO FOR: 127992000
+                CAMBIOS: 128007999
+                Tiempo de ejecucion en microsegundos: 1.3381e+006
+        PIVOTE RANDOM:
+                LLAMADAS A LA FUNCION QUICK: 16001
+                ENTRADAS AL CICLO FOR: 335897
+                CAMBIOS: 118386
+                Tiempo de ejecucion en microsegundos: 4996
+
+
+ ->Prueba con array de 18000 en el peor de los casos
+        PIVOTE FIJO:
+                LLAMADAS A LA FUNCION QUICK: 35999
+                ENTRADAS AL CICLO FOR: 161991000
+                CAMBIOS: 162008999
+                Tiempo de ejecucion en microsegundos: 1.78713e+006
+        PIVOTE RANDOM:
+                LLAMADAS A LA FUNCION QUICK: 22543
+                ENTRADAS AL CICLO FOR: 435577
+                CAMBIOS: 145875
+                Tiempo de ejecucion en microsegundos: 5998
+
+
+ ->Prueba con array de 20000 en el peor de los casos
+        PIVOTE FIJO:
+                LLAMADAS A LA FUNCION QUICK: 39999
+                ENTRADAS AL CICLO FOR: 199990000
+                CAMBIOS: 200009999
+                Tiempo de ejecucion en microsegundos: 2.93221e+006
+        PIVOTE RANDOM:
+                LLAMADAS A LA FUNCION QUICK: 23893
+                ENTRADAS AL CICLO FOR: 461672
+                CAMBIOS: 173207
+                Tiempo de ejecucion en microsegundos: 5999
+
+
+CASO PROMEDIO-----------------------------------------------------------------
+
+
+ ->Prueba con array de 1000 en el caso promedio
+                LLAMADAS A LA FUNCION QUICK: 1201
+                ENTRADAS AL CICLO FOR: 10546
+                CAMBIOS: 7094
+                Tiempo de ejecucion en microsegundos: 0
+
+
+ ->Prueba con array de 2000 en el caso promedio
+                LLAMADAS A LA FUNCION QUICK: 2399
+                ENTRADAS AL CICLO FOR: 23457
+                CAMBIOS: 14671
+                Tiempo de ejecucion en microsegundos: 1000
+
+
+ ->Prueba con array de 3000 en el caso promedio
+                LLAMADAS A LA FUNCION QUICK: 3589
+                ENTRADAS AL CICLO FOR: 38836
+                CAMBIOS: 23945
+                Tiempo de ejecucion en microsegundos: 1001
+
+
+ ->Prueba con array de 4000 en el caso promedio
+                LLAMADAS A LA FUNCION QUICK: 4797
+                ENTRADAS AL CICLO FOR: 52496
+                CAMBIOS: 30314
+                Tiempo de ejecucion en microsegundos: 1002
+
+
+ ->Prueba con array de 5000 en el caso promedio
+                LLAMADAS A LA FUNCION QUICK: 5991
+                ENTRADAS AL CICLO FOR: 69883
+                CAMBIOS: 42440
+                Tiempo de ejecucion en microsegundos: 1000
+
+
+ ->Prueba con array de 6000 en el caso promedio
+                LLAMADAS A LA FUNCION QUICK: 7201
+                ENTRADAS AL CICLO FOR: 81144
+                CAMBIOS: 46091
+                Tiempo de ejecucion en microsegundos: 1000
+
+
+ ->Prueba con array de 7000 en el caso promedio
+                LLAMADAS A LA FUNCION QUICK: 8375
+                ENTRADAS AL CICLO FOR: 101119
+                CAMBIOS: 58666
+                Tiempo de ejecucion en microsegundos: 1998
+
+
+ ->Prueba con array de 8000 en el caso promedio
+                LLAMADAS A LA FUNCION QUICK: 9583
+                ENTRADAS AL CICLO FOR: 117209
+                CAMBIOS: 59990
+                Tiempo de ejecucion en microsegundos: 1000
+
+
+ ->Prueba con array de 9000 en el caso promedio
+                LLAMADAS A LA FUNCION QUICK: 10753
+                ENTRADAS AL CICLO FOR: 210662
+                CAMBIOS: 78111
+                Tiempo de ejecucion en microsegundos: 1999
+
+
+ ->Prueba con array de 10000 en el caso promedio
+                LLAMADAS A LA FUNCION QUICK: 11953
+                ENTRADAS AL CICLO FOR: 222916
+                CAMBIOS: 85364
+                Tiempo de ejecucion en microsegundos: 1997
+
+
+ ->Prueba con array de 11000 en el caso promedio
+                LLAMADAS A LA FUNCION QUICK: 13149
+                ENTRADAS AL CICLO FOR: 240104
+                CAMBIOS: 91928
+                Tiempo de ejecucion en microsegundos: 3002
+
+
+ ->Prueba con array de 12000 en el caso promedio
+                LLAMADAS A LA FUNCION QUICK: 14339
+                ENTRADAS AL CICLO FOR: 250299
+                CAMBIOS: 101260
+                Tiempo de ejecucion en microsegundos: 2001
+
+
+ ->Prueba con array de 13000 en el caso promedio
+                LLAMADAS A LA FUNCION QUICK: 15549
+                ENTRADAS AL CICLO FOR: 271236
+                CAMBIOS: 108177
+                Tiempo de ejecucion en microsegundos: 4000
+
+
+ ->Prueba con array de 14000 en el caso promedio
+                LLAMADAS A LA FUNCION QUICK: 16733
+                ENTRADAS AL CICLO FOR: 287058
+                CAMBIOS: 120758
+                Tiempo de ejecucion en microsegundos: 2002
+
+
+ ->Prueba con array de 15000 en el caso promedio
+                LLAMADAS A LA FUNCION QUICK: 17947
+                ENTRADAS AL CICLO FOR: 300935
+                CAMBIOS: 125233
+                Tiempo de ejecucion en microsegundos: 2002
+
+
+ ->Prueba con array de 16000 en el caso promedio
+                LLAMADAS A LA FUNCION QUICK: 19155
+                ENTRADAS AL CICLO FOR: 318395
+                CAMBIOS: 133993
+                Tiempo de ejecucion en microsegundos: 2001
 */
 
